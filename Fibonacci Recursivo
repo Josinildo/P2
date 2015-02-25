@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include <stdlib.h>
+int fibonacci(int num);
+int main(){
+	int n, i;
+	printf("Digite a quantidade de termos: ");
+	scanf_s("%d", &n);
+	for (i = 1; i <= n; i++){
+		printf("\nO resultado de Fibonacci eh: %i \n", fibonacci(i));
+	}
+	system("pause");
+	return 0;
+}
+int fibonacci(int num){
+	if (num == 0)
+		return 0;
+	else if (num == 1)
+		return 1;
+	else
+		return fibonacci(num - 1) + fibonacci(num - 2);
+}
