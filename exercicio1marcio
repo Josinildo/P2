@@ -1,7 +1,8 @@
 #include <stdio.h>
 #define TAM 100
+
 int main(){
-	int tam=0,i,op,iExcl;
+	int tam=0,i,op,iExcl, maiorPar;
 	double media;
 	int v[TAM];
 	do{
@@ -10,7 +11,8 @@ int main(){
 		printf("2-remover indice \n");
 		printf("3-imprimir vetor \n");
 		printf("4-imprimir media \n");
-		printf("Digite sua opção [ou 0 para sair]\n");
+		printf("5-imprimir o maior par\n");
+		printf("Digite sua opcao [ou 0 para sair]\n");
 		scanf("%i",&op);
 		switch(op){
 		case 1:
@@ -46,10 +48,31 @@ int main(){
 			break;
 		case 4:
 			media = 0.0;
-			for(i=0; i<tam; i++)
-				media+= v[i];
-			media/=tam;
-			printf("A media eh: %.2f \n\n", media);
+			for(i=0; i<tam; ++i)
+			{
+				media += v[i];
+			}
+			media /= tam;
+			printf("A media eh %.2f\n\n", media);
+			break;
+		case 5:
+			for(i=0; i<tam && v[i]%2!=0; ++i);
+			if(i!=tam)
+			{
+				maiorPar = v[i];
+				for(i=i+1; i<tam; ++i)
+				{
+					if(v[i]%2==0 && v[i] > maiorPar)
+					{
+						maiorPar = v[i];
+					}
+				}
+				printf("O maior par do vetor eh %d\n\n", maiorPar);
+			}
+			else
+			{
+				printf("Nao existe valor par no vetor!\n\n");
+			}
 			break;
 		default :
 			if(op!=0){
