@@ -1,0 +1,30 @@
+/* Código NÃO FINALIZADO
+ Código NÃO FINALIZADO
+ Código NÃO FINALIZADO */
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#define TAM 100
+void InsertNUM(int x, int y);  /*insertion procedure*/
+float CheckNUM(); /*checking function*/
+float PrintNUM(); /*display function*/
+int main(){
+	int v[TAM];
+	int i = 0 ;
+	for (i; i < TAM; i + 1){
+		int cont;
+		cont = TAM - i;
+		InsertNUM (int v[i], int cont);
+	}
+	system("pause");
+	return 0;
+}
+void InsertNUM(int x, int y){
+	char op;
+	printf("Voce deseja executar a inserção de numeros no vetor? Digite S para SIM ou N para NAO:");
+	op = toupper(getchar());
+	if (op == 'S'){
+
+	}
+	
+}
